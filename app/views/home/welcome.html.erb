@@ -1,0 +1,53 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div class="carousel-inner" role="listbox">
+		<div class="item active">
+			<%= image_tag "background.jpg", class: "img-responsive" %>
+		</div>
+		<div class="item">
+			<%= image_tag "omlet.jpg", class: "img-responsive" %>
+		</div>
+		<div class="item">
+			<%= image_tag "nature.jpg", class: "img-responsive" %>
+		</div>
+		<div class="item">
+			<%= image_tag "pillars.jpg", class: "img-responsive" %>
+		</div>
+	</div>
+	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+<div class="container" id="welcome_page_text_container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h2>Come RIDE with us</h2>
+			<p class="welcome-page-quote"> "Sometimes you find yourself in the middle of nowhere and sometimes in the middle of nowhere you find yourself" </p>
+		</div>
+	</div>
+	<div id ="register_link_container" class="row">
+		<div class="col-lg-12">
+			<%= link_to "Click here to register yourself",  riders_path , class: "register-link"  unless current_user %>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div id="riders_table_container">
+		<%unless @riders.blank?  && @user_search.blank? %>
+		<%= render "riders/riders_search_result" %>
+		<% end %>
+	</div>
+</div>
+<script type="text/javascript">
+$('#riders_table').DataTable({
+		"bFilter": false,
+	paging: false
+}
+);
+
+$("#custom_riders_filter_container").hide();
+</script>

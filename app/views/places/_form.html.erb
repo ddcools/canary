@@ -1,0 +1,70 @@
+<div class="modal fade" id="new_place_registration_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Place registration</h4>
+      </div>
+      <div class="modal-body" id="place_registration_form_container">
+        <%= form_for(place) do |f| %>
+        <% if place.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
+          <ul>
+            <% place.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+        
+        <div class="form-group">
+          <%= f.label :place_name, class: "control-label" %>
+          <%= f.text_field :place_name, class: "form-control", maxlength: "50" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :type, class: "control-label" %>
+          <%= f.text_field :place_type, class: "form-control", maxlength: "50" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Latitude, class: "control-label" %>
+          <%= f.text_field :lat, class: "form-control", maxlength: "50" %>
+        </div>
+        
+        <div class="latlng-selector" data-toggle="modal" data-target="#latlng_modal" onclick="initialize_map()"> Choose from Map </div>
+        <div class="modal fade" id="latlng_modal" role="dialog">
+          <div class="modal-dialog" id="map_modal_div">
+            <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="close" aria-label="Close" id="latlng_modal_close_btn" onclick="close_latlng_selector()" ><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body">
+                <div id="map-canvas" class=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :Longitude, class: "control-label" %>
+          <%= f.text_field :lng, class: "form-control", maxlength: "50" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :state, class: "control-label" %>
+          <%= f.text_field :state, class: "form-control", maxlength: "50" %>
+        </div>
+        <div class="form-group">
+          <%= f.submit 'Register', :class => "btn btn-info btn-block" %>
+        </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= javascript_include_tag 'places' %>
+ 

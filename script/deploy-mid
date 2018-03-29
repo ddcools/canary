@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function show_and_execute() {
+  echo "Executing $1"
+  $1
+}
+
+show_and_execute "sudo gem install bundler"
+show_and_execute "git remote prune origin"
+show_and_execute "bundle install"
+show_and_execute "rake db:migrate db:seed"
+
+echo "Ready for next step"

@@ -1,0 +1,70 @@
+
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+h2 {
+	margin-top    : 2px;
+	margin-bottom : 2px;
+}
+
+div#rider_registration_form_container {
+	max-width : 360px;
+	margin    : 0 auto;
+}
+
+.divider {
+	margin-top    : 20px;
+	margin-bottom : 5px;
+
+	text-align    : center;
+}
+
+.divider hr {
+	width  : 35%;
+	margin : 7px 0px;
+}
+
+.left {
+	float : left;
+}
+
+.right {
+	float : right;
+}
+
+table#riders_table {
+	max-width : 60%;
+	margin    : 0 auto;
+}
+
+div#riders_table_info {
+	position    : static;
+	margin-left : 227px;
+}
+
+div#custom_riders_filter_container{
+	position: relative;
+ 	clear: left;
+ 	padding-bottom: 10px;
+}
+
+.dataTables_filter {
+	display : none;
+}
+
+input#searchbox {
+	height           : 30px;
+	width            : 100%;
+	max-width        : 150px;
+	padding          : 6px 12px;
+
+	background-color : #fff;
+	background-image : none;
+	font-size        : 14px;
+	color            : #555;
+	line-height      : 1.42857143;
+	border           : 1px solid #ccc;
+	border-radius    : 4px;
+	box-shadow       : inset 0 1px 1px rgba(0,0,0,.075);
+}

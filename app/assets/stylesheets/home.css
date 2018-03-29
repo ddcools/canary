@@ -1,0 +1,36 @@
+
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+.copy_right_css {
+	position : fixed;
+	right    : 10px;
+	bottom   : 0;
+}
+
+.register-link {
+	width        : 200px;
+	padding-left : 5px;
+
+	cursor       : pointer;
+	color        : #2B96F1;
+}
+
+div#register_link_container{
+	padding-top : 30px;
+}
+
+div#welcome_page_text_container {
+	padding-top : 20px;
+}
+
+.welcome-page-quote{
+	font-size : 16px;
+}
+
+
+#riders_table_container { 
+	padding-top: 50px;
+	padding-left: 10px;
+}

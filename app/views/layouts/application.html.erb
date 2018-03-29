@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%= favicon_link_tag 'favicon.ico' %>
+		<title>Canary</title>
+		<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css">
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+		<script src="//maps.google.com/maps/api/js?key=AIzaSyBdW26V1y8HJdpm5oSIrFdNdfSQl6YTe7s"></script>
+		<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<%= render :partial => "/header" %>
+		</div>
+		<%= yield %>
+		<div class="copy_right_css">
+			<%= render :partial => "/footer" %>
+		</div>
+	</body>
+</html>

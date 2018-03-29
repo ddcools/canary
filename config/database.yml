@@ -1,0 +1,13 @@
+development: &development
+  adapter: mysql2
+  encoding: utf8
+  database: canary_development
+  pool: 5
+  reconnect: true
+  username: root
+  password: password
+  socket: <%= ["/var/lib/mysql/mysql.sock", "/tmp/mysql.sock", "/var/run/mysqld/mysqld.sock"].reject {|location| !File.exists?(location)}.first %>
+
+test:
+  <<: *development
+  database: canary_test

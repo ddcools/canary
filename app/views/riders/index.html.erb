@@ -1,0 +1,34 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+    <%= render "riders_search_result" %>
+  <br>
+  <br>
+  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#new_rider_registration_modal">
+  Register
+  </button>
+</div>
+
+<script type="text/javascript">
+  $('#riders_table').DataTable({
+      paging: false 
+      }
+    );
+ 
+$(document).ready(function() {
+  var dataTable = $('#riders_table').dataTable();
+    $("#searchbox").keyup(function() {
+        dataTable.fnFilter(this.value);
+    });   
+} );
+</script>
+
+
+
+<%= render 'form', rider: @rider %>
+
+
+<% if @error_on_register %>
+<script type="text/javascript">
+  $("#new_rider_registration_modal").modal('show');
+</script>
+<% end%> 
