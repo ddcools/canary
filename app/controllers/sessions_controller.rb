@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     rider = Rider.find_by_email(params[:email])
     if rider && rider.authenticate(params[:password])
       session[:rider_id] = rider.id
+      flash[:notice] = "Success"
       redirect_to '/'
     else
       redirect_to '/login'
