@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.7.1'
 
-gem 'rails', '~> 5.1'
+gem 'rails', '~> 6.0', '>= 6.0.3'
 
 gem 'mysql2', '~> 0.3.20'
 gem "therubyracer"
