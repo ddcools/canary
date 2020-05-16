@@ -5,8 +5,7 @@ development: &development
   pool: 5
   reconnect: true
   username: root
-  password: password
-  socket: <%= ["/var/lib/mysql/mysql.sock", "/tmp/mysql.sock", "/var/run/mysqld/mysqld.sock"].reject {|location| !File.exists?(location)}.first %>
+  password: admin123*
 
 test:
   <<: *development

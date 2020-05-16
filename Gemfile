@@ -4,7 +4,7 @@ ruby '2.7.1'
 
 gem 'rails', '~> 6.0', '>= 6.0.3'
 
-gem 'mysql2', '~> 0.3.20'
+gem 'mysql2', '~> 0.5.3'
 gem "therubyracer"
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -33,6 +33,6 @@ gem 'brakeman'
 gem 'rspec-rails'
 gem 'rails-controller-testing'
 gem 'traceroute'
-gem 'factory_girl_rails'
+gem 'factory_bot'
 gem 'capybara'
 gem 'database_cleaner'
